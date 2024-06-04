@@ -1,0 +1,47 @@
+.hello_world_container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .hello_world_bg {
+    --dimension: 100%;
+    height: var(--dimension);
+    width: var(--dimension);
+    position: relative;
+
+    div {
+      height: var(--dimension);
+      width: var(--dimension);
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .hello_world_bg::before {
+    height: 100%;
+    width: 100%;
+
+    content: " ";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--color-black-overlay);
+  }
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    color: var(--color-white);
+    transform: translate(-50%, -50%);
+
+    font-size: 120px;
+  }
+}
